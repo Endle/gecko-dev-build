@@ -28,6 +28,14 @@ jobs:
 #          cd gecko-dev
 #          git checkout 0e177df15d8b6d2cc1a5f956b45b9b109bb2e46e
 
+      - name: Requirements
+        run: |
+          apt-get install python3 python3-dev -y
+          python3 -m pip install --user mercurial
+          curl https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O
+          python3 bootstrap.py
+
+
       - name: Build mach
         run: |
           cd gecko-dev
