@@ -25,8 +25,8 @@ jobs:
       - name: Get gecko
         run: |
           git clone https://github.com/mozilla/gecko-dev.git --depth 1500
-          cd gecko-dev
-          git checkout 0e177df15d8b6d2cc1a5f956b45b9b109bb2e46e
+#          cd gecko-dev
+#          git checkout 0e177df15d8b6d2cc1a5f956b45b9b109bb2e46e
 
       - name: Build mach
         run: |
