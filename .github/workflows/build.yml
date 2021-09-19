@@ -31,4 +31,5 @@ jobs:
       - name: Build mach
         run: |
           cd gecko-dev
+          ./mach bootstrap
           ./mach build
