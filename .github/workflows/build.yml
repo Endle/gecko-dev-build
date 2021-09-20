@@ -32,8 +32,8 @@ jobs:
         run: |
           sudo apt-get install python3 python3-dev -y
           python3 -m pip install --user mercurial
-          curl https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O
-          python3 bootstrap.py
+#          curl https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O
+#          python3 bootstrap.py
 
 
       - name: Build mach
