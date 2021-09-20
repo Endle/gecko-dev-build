@@ -45,7 +45,7 @@ jobs:
       - name: Install GIt cinnabar #https://firefox-source-docs.mozilla.org/mobile/android/geckoview/contributor/mc-quick-start.html#manual-installation
         run: |
           cd /dev/shm
-          git clone https://github.com/glandium/git-cinnabar.git
+          git clone https://github.com/glandium/git-cinnabar.git --depth=1
           cd git-cinnabar
           make -j2
           echo "/dev/shm/git-cinnabar" >> $GITHUB_PATH
@@ -53,17 +53,21 @@ jobs:
           git cinnabar download
 
 #          echo 'export PATH="$PATH:/dev/shm/git-cinnabar"' >> ~/.bash_profile
-
-
       - name: Check Git cinnabar
         run: |
           echo $PATH
           which git-cinnabar
+
       - name: Get gecko
         run: |
           git clone https://github.com/mozilla/gecko-dev.git --depth 2000
       #          cd gecko-dev
       #          git checkout 0e177df15d8b6d2cc1a5f956b45b9b109bb2e46e
+
+      - name: Set mozconfig
+        run: |
+          cd gecko-dev
+          echo "ac_add_options --enable-application=browser" > mozconfig
 
       - name: Build mach
         run: |
