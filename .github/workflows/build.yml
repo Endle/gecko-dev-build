@@ -37,6 +37,7 @@ jobs:
 
       - name: Install GIt cinnabar #https://firefox-source-docs.mozilla.org/mobile/android/geckoview/contributor/mc-quick-start.html#manual-installation
         run: |
+          sudo apt-get install curl
           cd /dev/shm
           git clone https://github.com/glandium/git-cinnabar.git
           cd git-cinnabar
