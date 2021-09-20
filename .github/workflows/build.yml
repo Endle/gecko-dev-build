@@ -49,14 +49,16 @@ jobs:
           cd git-cinnabar
           make -j2
           echo "/dev/shm/git-cinnabar" >> $GITHUB_PATH
+          export PATH="$PATH:/dev/shm/git-cinnabar"
           git cinnabar download
 
-#          export PATH="$PATH:/dev/shm/git-cinnabar"
 #          echo 'export PATH="$PATH:/dev/shm/git-cinnabar"' >> ~/.bash_profile
 
 
       - name: Check Git cinnabar
-        run: which git-cinnabar
+        run: |
+          echi $PATH
+          which git-cinnabar
       - name: Get gecko
         run: |
           git clone https://github.com/mozilla/gecko-dev.git --depth 2000
