@@ -26,8 +26,6 @@ jobs:
         run: |
           echo "::set-output name=date::$(/bin/date -u "+%s%Y%m%d")"
         shell: bash
-
-
       - name: Cache mozbuild
         id: cache-mozbuild
         uses: actions/cache@v2
@@ -58,15 +56,12 @@ jobs:
           sudo apt-get install x11proto-input-dev x11proto-randr-dev x11proto-record-dev 
           sudo apt-get install x11proto-xinerama-dev
 
-#          curl https://hg.mozilla.org/mozilla-central/raw-file/default/python/mozboot/bin/bootstrap.py -O
-#          python3 bootstrap.py
 
-
-  - name: Get gecko
-    run: |
-      git clone https://github.com/mozilla/gecko-dev.git --depth 2000
-  #          cd gecko-dev
-  #          git checkout 0e177df15d8b6d2cc1a5f956b45b9b109bb2e46e
+      - name: Get gecko
+        run: |
+          git clone https://github.com/mozilla/gecko-dev.git --depth 2000
+      #          cd gecko-dev
+      #          git checkout 0e177df15d8b6d2cc1a5f956b45b9b109bb2e46e
 
       - name: Build mach
         run: |
