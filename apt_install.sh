@@ -14,4 +14,5 @@ libwayland-bin libwayland-dev libxcomposite-dev libxcursor-dev  \
 libxdamage-dev libxfixes-dev libxi-dev libxinerama-dev libxkbcommon-dev  \
 libxrandr-dev libxtst-dev pango1.0-tools wayland-protocols  \
 x11proto-input-dev x11proto-randr-dev x11proto-record-dev \
-x11proto-xinerama-dev libnode64 libossp-uuid16 nodejs-doc
+x11proto-xinerama-dev libnode64 libossp-uuid16 nodejs-doc \
+libcurl4-openssl-dev

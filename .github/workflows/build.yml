@@ -35,9 +35,15 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cache-mozbuild
 
+
+
+      - name: Requirements
+        run: |
+          ./apt_install.sh
+          python3 -m pip install --user mercurial
+
       - name: Install GIt cinnabar #https://firefox-source-docs.mozilla.org/mobile/android/geckoview/contributor/mc-quick-start.html#manual-installation
         run: |
-          sudo apt-get install curl libcurl4-openssl-dev
           cd /dev/shm
           git clone https://github.com/glandium/git-cinnabar.git
           cd git-cinnabar
@@ -45,11 +51,6 @@ jobs:
           export PATH="$PATH:/dev/shm/git-cinnabar"
           echo 'export PATH="$PATH:/dev/shm/git-cinnabar"' >> ~/.bash_profile
           git cinnabar download
-
-      - name: Requirements
-        run: |
-          ./apt_install.sh
-          python3 -m pip install --user mercurial
 
       - name: Get gecko
         run: |
