@@ -69,8 +69,12 @@ jobs:
           cd gecko-dev
           echo "ac_add_options --enable-application=browser" > mozconfig
 
-      - name: Build mach
+      - name: mach bootstrap
         run: |
           cd gecko-dev
           ./mach bootstrap
-          ./mach build
+
+      - name: mach build
+        run: |
+          cd gecko-dev
+          ./mach build --no-interactive
