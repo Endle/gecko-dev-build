@@ -48,10 +48,13 @@ jobs:
           git clone https://github.com/glandium/git-cinnabar.git
           cd git-cinnabar
           make -j2
-          export PATH="$PATH:/dev/shm/git-cinnabar"
-          echo 'export PATH="$PATH:/dev/shm/git-cinnabar"' >> ~/.bash_profile
+          echo "/dev/shm/git-cinnabar" >> $GITHUB_PATH
+#          export PATH="$PATH:/dev/shm/git-cinnabar"
+#          echo 'export PATH="$PATH:/dev/shm/git-cinnabar"' >> ~/.bash_profile
           git cinnabar download
 
+      - name: Check Git cinnabar
+        run: which git-cinnabar
       - name: Get gecko
         run: |
           git clone https://github.com/mozilla/gecko-dev.git --depth 2000
