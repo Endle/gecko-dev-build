@@ -40,13 +40,13 @@ jobs:
           ./apt_install.sh
           python3 -m pip install --user mercurial
 
-      - name: Install GIt cinnabar
-        run: |
-          cd /dev/shm
-          git clone https://github.com/glandium/git-cinnabar.git
-          https://github.com/glandium/git-cinnabar.git
-          git cinnabar doanload
-          make -j2
+#      - name: Install GIt cinnabar
+#        run: |
+#          cd /dev/shm
+#          git clone https://github.com/glandium/git-cinnabar.git
+#          https://github.com/glandium/git-cinnabar.git
+#          git cinnabar doanload
+#          make -j2
 
 
       - name: Get gecko
