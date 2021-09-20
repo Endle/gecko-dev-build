@@ -57,7 +57,7 @@ jobs:
 
       - name: Check Git cinnabar
         run: |
-          echi $PATH
+          echo $PATH
           which git-cinnabar
       - name: Get gecko
         run: |
