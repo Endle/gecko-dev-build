@@ -49,9 +49,11 @@ jobs:
           cd git-cinnabar
           make -j2
           echo "/dev/shm/git-cinnabar" >> $GITHUB_PATH
+          git cinnabar download
+
 #          export PATH="$PATH:/dev/shm/git-cinnabar"
 #          echo 'export PATH="$PATH:/dev/shm/git-cinnabar"' >> ~/.bash_profile
-          git cinnabar download
+
 
       - name: Check Git cinnabar
         run: which git-cinnabar
