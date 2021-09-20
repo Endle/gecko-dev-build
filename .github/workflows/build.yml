@@ -37,25 +37,8 @@ jobs:
 
       - name: Requirements
         run: |
-          sudo apt-get update -y && sudo apt-get upgrade -y
-
-          sudo apt-get install python3 python3-dev -y
+          ./apt_install.sh
           python3 -m pip install --user mercurial
-
-          sudo apt-get install gir1.2-atk-1.0 gir1.2-atspi-2.0 gir1.2-gtk-3.0 gir1.2-harfbuzz-0.0 -y
-          sudo apt-get install gir1.2-pango-1.0 libasyncns0 libatk-bridge2.0-dev libatk1.0-dev
-          sudo apt-get install libatspi2.0-dev libdatrie-dev libdbus-glib-1-dev-bin libegl-dev libegl-mesa0 
-          sudo apt-get install libegl1 libegl1-mesa-dev libepoxy-dev libflac8 libfribidi-dev libgl-dev 
-          sudo apt-get install libgl1-mesa-dev libgles-dev libgles1 libgles2 libglvnd-dev libglx-dev 
-          sudo apt-get install libgraphite2-dev libharfbuzz-dev libharfbuzz-gobject0 libharfbuzz-icu0 
-          sudo apt-get install libopengl-dev libopengl0 libpango1.0-dev libpangoxft-1.0-0 
-          sudo apt-get install libpulse-mainloop-glib0 libpulse0 libsndfile1 libthai-dev libvorbisenc2 
-          sudo apt-get install libwayland-bin libwayland-dev libxcomposite-dev libxcursor-dev 
-          sudo apt-get install libxdamage-dev libxfixes-dev libxi-dev libxinerama-dev libxkbcommon-dev 
-          sudo apt-get install libxrandr-dev libxtst-dev pango1.0-tools wayland-protocols 
-          sudo apt-get install x11proto-input-dev x11proto-randr-dev x11proto-record-dev 
-          sudo apt-get install x11proto-xinerama-dev
-
 
       - name: Get gecko
         run: |
