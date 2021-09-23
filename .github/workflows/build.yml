@@ -77,4 +77,4 @@ jobs:
       - name: mach build
         run: |
           cd gecko-dev
-          ./mach build --no-interactive
+          ./mach build
